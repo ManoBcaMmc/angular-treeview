@@ -11,7 +11,7 @@ var closedFolderIcon = require("./view/imgs/folder-closed.png");
 var plusIcon = require("./view/imgs/plus.png");
 var removeIcon = require("./view/imgs/remove.png");
 
-var tree = angular.module("allen.tree", []);
+var tree = angular.module("angular.tree", []);
 tree
     .directive("treeNode", function () {
         return {

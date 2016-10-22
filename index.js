@@ -4,4 +4,4 @@
 
 "use strict";
 require("./tree");
-module.exports = "tree";
+module.exports = "angular.tree";
