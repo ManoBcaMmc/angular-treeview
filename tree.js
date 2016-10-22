@@ -57,7 +57,7 @@
 	var plusIcon = __webpack_require__(10);
 	var removeIcon = __webpack_require__(11);
 
-	var tree = angular.module("allen.tree", []);
+	var tree = angular.module("angular.tree", []);
 	tree
 	    .directive("treeNode", function () {
 	        return {
