@@ -36,11 +36,18 @@ tree
                 $scope.add_btn = plusIcon;
                 $scope.remove_btn = removeIcon;
                 function load_children() {
-                    var children = [];
                     if ($scope.childrenLoader) {
-                        children = $scope.childrenLoader($scope.item);
+                        $scope.childrenLoader($scope.item)
+                            .then(function(children) {
+                                $scope.subNodes = children;
+                            })
+                            .catch(function(error) {
+                                console.error(error);
+                                $scope.subNodes = [];
+                            })
+                    } else {
+                        $scope.subNodes = [];
                     }
-                    $scope.subNodes = children;
                 }
                 $scope.wrap_node_click = function() {
                     if ($scope.item) {
