@@ -9,6 +9,9 @@
       <a href class="remove" ng-click="remove_self()">
         <img ng-src="{{ remove_btn }}">
       </a>
+      <a href class="edit" ng-click="edit()">
+        <span class="glyphicon glyphicon-edit"></span>
+      </a>
     </div>
   </div>
   <div class="sub-node" ng-if="open" ng-repeat="node in subNodes">

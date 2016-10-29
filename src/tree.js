@@ -24,7 +24,8 @@ tree
                 nodeClick: "=",
                 childrenLoader: "=",
                 addItem: "=",
-                removeItem: "="
+                removeItem: "=",
+                editItem: "="
             },
             require: [],
             restrict: "E",
@@ -111,6 +112,10 @@ tree
                     }
                     return false;
                 };
+                $scope.edit = function() {
+                    $scope.editItem && $scope.editItem($scope.item);
+                    return false;
+                };
             }
         };
     })
@@ -135,7 +140,8 @@ tree
                 nodeClick: "=",
                 childrenLoader: "=",
                 addItem: "=",
-                removeItem: "="
+                removeItem: "=",
+                editItem: "="
             },
             require: [],
             restrict: "E",
