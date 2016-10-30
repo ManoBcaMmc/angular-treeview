@@ -166,6 +166,8 @@
 	                    return false;
 	                };
 	                $scope.edit = function() {
+	                    console.log("edit:::");
+	                    console.log($scope.editItem);
 	                    $scope.editItem && $scope.editItem($scope.item);
 	                    return false;
 	                };
@@ -282,7 +284,7 @@
 /* 3 */
 /***/ function(module, exports) {
 
-	module.exports = "<div ng-class=\"node_class()\">\n  <div class=\"directory-level\" ng-click=\"wrap_node_click()\">\n    <img class=\"icon\" ng-src=\"{{ resolve_icon() }}\">\n    <span>{{ adapter(item).text }}</span>\n    <div class=\"operation\" ng-click=\"$event.stopPropagation()\">\n      <a href class=\"add\" ng-click=\"add_child()\" ng-if=\"adapter(item).type==='branch'\">\n        <img ng-src=\"{{ add_btn }}\">\n      </a>\n      <a href class=\"remove\" ng-click=\"remove_self()\">\n        <img ng-src=\"{{ remove_btn }}\">\n      </a>\n      <a href class=\"edit\" ng-click=\"edit()\">\n        <span class=\"glyphicon glyphicon-edit\"></span>\n      </a>\n    </div>\n  </div>\n  <div class=\"sub-node\" ng-if=\"open\" ng-repeat=\"node in subNodes\">\n    <tree-node item=\"node\" adapter=\"adapter\" icon=\"icon\"\n               folder-open=\"folderOpen\" folder-close=\"folderClose\"\n               node-click=\"nodeClick\" children-loader=\"childrenLoader\"\n               add-item=\"addItem\" remove-item=\"removeItem\">\n    </tree-node>\n  </div>\n</div>";
+	module.exports = "<div ng-class=\"node_class()\">\n  <div class=\"directory-level\" ng-click=\"wrap_node_click()\">\n    <img class=\"icon\" ng-src=\"{{ resolve_icon() }}\">\n    <span>{{ adapter(item).text }}</span>\n    <div class=\"operation\" ng-click=\"$event.stopPropagation()\">\n      <a href class=\"add\" ng-click=\"add_child()\" ng-if=\"adapter(item).type==='branch'\">\n        <img ng-src=\"{{ add_btn }}\">\n      </a>\n      <a href class=\"remove\" ng-click=\"remove_self()\">\n        <img ng-src=\"{{ remove_btn }}\">\n      </a>\n      <a href class=\"edit\" ng-click=\"edit()\">\n        <span class=\"glyphicon glyphicon-edit\"></span>\n      </a>\n    </div>\n  </div>\n  <div class=\"sub-node\" ng-if=\"open\" ng-repeat=\"node in subNodes\">\n    <tree-node item=\"node\" adapter=\"adapter\" icon=\"icon\"\n               folder-open=\"folderOpen\" folder-close=\"folderClose\"\n               node-click=\"nodeClick\" children-loader=\"childrenLoader\"\n               add-item=\"addItem\" remove-item=\"removeItem\" edit-item=\"editItem\">\n    </tree-node>\n  </div>\n</div>";
 
 /***/ },
 /* 4 */

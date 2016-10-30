@@ -120,6 +120,8 @@ tree
                     return false;
                 };
                 $scope.edit = function() {
+                    console.log("edit:::");
+                    console.log($scope.editItem);
                     $scope.editItem && $scope.editItem($scope.item);
                     return false;
                 };
